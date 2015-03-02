@@ -1,4 +1,4 @@
-﻿namespace UnqliteRepository
+﻿namespace System.Data.Unqlite.Contrib
 {
 	/// <summary>
 	///     Generic Entity interface.

@@ -1,7 +1,5 @@
 ﻿#region Usings
-using System;
 using System.Collections.Generic;
-using System.Data.Unqlite;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -9,7 +7,7 @@ using System.Linq.Expressions;
 #endregion
 
 
-namespace UnqliteRepository
+namespace System.Data.Unqlite.Contrib
 {
 	/// <summary>
 	///     IRepository definition.
@@ -19,13 +17,13 @@ namespace UnqliteRepository
 	public interface IRepository<T, in TKey> where T : IEntity<TKey>, IDisposable
 	{
 		/// <summary>
-		/// Sets up the repository configuration.
+		///     Sets up the repository configuration.
 		/// </summary>
 		/// <param name="configuration">The configuration.</param>
 		void Setup(IRepositoryConfiguration configuration);
 
 		/// <summary>
-		/// Opens this instance.
+		///     Opens this instance.
 		/// </summary>
 		void Open(string fileName, UnqliteOpenMode openMode);
 
@@ -37,12 +35,11 @@ namespace UnqliteRepository
 		T GetById(TKey id);
 
 		/// <summary>
-		///		Returns a collection of <see cref="T"/> that satisfies the <see cref="predicate"/>.
+		///     Returns a collection of <see cref="T" /> that satisfies the <see cref="predicate" />.
 		/// </summary>
 		/// <param name="predicate">The predicate.</param>
 		/// <returns></returns>
 		IQueryable<T> Get(Expression<Func<T, bool>> predicate);
-
 
 		/// <summary>
 		///     Adds the new entity in the repository.
@@ -107,7 +104,7 @@ namespace UnqliteRepository
 		bool Exists(Expression<Func<T, bool>> predicate);
 
 		/// <summary>
-		/// Closes this instance.
+		///     Closes this instance.
 		/// </summary>
 		void Close();
 	}

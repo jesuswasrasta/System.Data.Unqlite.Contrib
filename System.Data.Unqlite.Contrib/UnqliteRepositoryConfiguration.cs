@@ -1,17 +1,16 @@
-﻿namespace UnqliteRepository
+﻿namespace System.Data.Unqlite.Contrib
 {
 	public class UnqliteRepositoryConfiguration : IRepositoryConfiguration
 	{
-		#region Properties
-		public string Filename { get; private set; }
-		#endregion
-
-
 		#region Constructors
 		public UnqliteRepositoryConfiguration()
 		{
 		}
 		#endregion
 
+
+		#region Properties
+		public string Filename { get; private set; }
+		#endregion
 	}
 }

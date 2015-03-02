@@ -1,7 +1,5 @@
 ﻿#region Usings
-using System;
 using System.Collections.Generic;
-using System.Data.Unqlite;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -9,17 +7,17 @@ using System.Linq.Expressions;
 #endregion
 
 
-namespace UnqliteRepository
+namespace System.Data.Unqlite.Contrib
 {
 	/// <summary>
-	///		Unqlite repository.
+	///     Unqlite repository.
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <typeparam name="TKey">The type of the key.</typeparam>
 	public class UnqliteRepository<T, TKey> : IRepository<T, TKey> where T : IEntity<TKey>, IDisposable
 	{
 		/// <summary>
-		/// Sets up the repository configuration.
+		///     Sets up the repository configuration.
 		/// </summary>
 		/// <param name="configuration">The configuration.</param>
 		/// <exception cref="System.NotImplementedException"></exception>
@@ -29,7 +27,7 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Opens this instance.
+		///     Opens this instance.
 		/// </summary>
 		/// <param name="fileName"></param>
 		/// <param name="openMode"></param>
@@ -40,11 +38,11 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Returns the T by its given id.
+		///     Returns the T by its given id.
 		/// </summary>
 		/// <param name="id">The value representing the ObjectId of the entity to retrieve.</param>
 		/// <returns>
-		/// The Entity T.
+		///     The Entity T.
 		/// </returns>
 		/// <exception cref="System.NotImplementedException"></exception>
 		public T GetById(TKey id)
@@ -53,7 +51,7 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Returns a collection of <see cref="T" /> that satisfies the <see cref="predicate" />.
+		///     Returns a collection of <see cref="T" /> that satisfies the <see cref="predicate" />.
 		/// </summary>
 		/// <param name="predicate">The predicate.</param>
 		/// <returns></returns>
@@ -64,11 +62,11 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Adds the new entity in the repository.
+		///     Adds the new entity in the repository.
 		/// </summary>
 		/// <param name="entity">The entity to add.</param>
 		/// <returns>
-		/// The added entity including its new ObjectId.
+		///     The added entity including its new ObjectId.
 		/// </returns>
 		/// <exception cref="System.NotImplementedException"></exception>
 		public T Add(T entity)
@@ -77,7 +75,7 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Adds the new entity in the repository.
+		///     Adds the new entity in the repository.
 		/// </summary>
 		/// <param name="entities"></param>
 		/// <exception cref="System.NotImplementedException"></exception>
@@ -87,11 +85,11 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Upserts an entity.
+		///     Upserts an entity.
 		/// </summary>
 		/// <param name="entity">The entity.</param>
 		/// <returns>
-		/// The updated entity.
+		///     The updated entity.
 		/// </returns>
 		/// <exception cref="System.NotImplementedException"></exception>
 		public T Update(T entity)
@@ -100,7 +98,7 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Upserts an entity.
+		///     Upserts an entity.
 		/// </summary>
 		/// <param name="entities"></param>
 		/// <exception cref="System.NotImplementedException"></exception>
@@ -110,7 +108,7 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Deletes an entity from the repository by its id.
+		///     Deletes an entity from the repository by its id.
 		/// </summary>
 		/// <param name="id">The entity's id.</param>
 		/// <exception cref="System.NotImplementedException"></exception>
@@ -120,7 +118,7 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Deletes an entity from the repository by its id.
+		///     Deletes an entity from the repository by its id.
 		/// </summary>
 		/// <param name="entity"></param>
 		/// <exception cref="System.NotImplementedException"></exception>
@@ -130,7 +128,7 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Deletes an entity from the repository by its id.
+		///     Deletes an entity from the repository by its id.
 		/// </summary>
 		/// <param name="predicate"></param>
 		/// <exception cref="System.NotImplementedException"></exception>
@@ -140,7 +138,7 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Deletes all entities in the repository.
+		///     Deletes all entities in the repository.
 		/// </summary>
 		/// <exception cref="System.NotImplementedException"></exception>
 		public void DeleteAll()
@@ -149,10 +147,10 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Counts the total entities in the repository.
+		///     Counts the total entities in the repository.
 		/// </summary>
 		/// <returns>
-		/// Count of entities in the repository.
+		///     Count of entities in the repository.
 		/// </returns>
 		/// <exception cref="System.NotImplementedException"></exception>
 		public long Count()
@@ -161,11 +159,11 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Checks if the entity exists for given predicate.
+		///     Checks if the entity exists for given predicate.
 		/// </summary>
 		/// <param name="predicate">The expression.</param>
 		/// <returns>
-		/// True when an entity matching the predicate exists, false otherwise.
+		///     True when an entity matching the predicate exists, false otherwise.
 		/// </returns>
 		/// <exception cref="System.NotImplementedException"></exception>
 		public bool Exists(Expression<Func<T, bool>> predicate)
@@ -174,7 +172,7 @@ namespace UnqliteRepository
 		}
 
 		/// <summary>
-		/// Closes this instance.
+		///     Closes this instance.
 		/// </summary>
 		/// <exception cref="System.NotImplementedException"></exception>
 		public void Close()

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnqliteRepository", "UnqliteRepository\UnqliteRepository.csproj", "{996663E8-9CFE-4FE0-A171-09327A085945}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Data.Unqlite.Contrib", "System.Data.Unqlite.Contrib\System.Data.Unqlite.Contrib.csproj", "{996663E8-9CFE-4FE0-A171-09327A085945}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Data.Unqlite", "System.Data.Unqlite\System.Data.Unqlite\System.Data.Unqlite.csproj", "{52BBC9B6-FCE7-4DE0-AC2A-488921D26640}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnqliteRepository.Tests.Unit", "UnqliteRepository.Tests.Unit\UnqliteRepository.Tests.Unit.csproj", "{F8C49651-0456-48EC-A67A-B0BD9DDB4A7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Data.Unqlite.Contrib.Tests.Unit", "System.Data.Unqlite.Contrib.Tests.Unit\System.Data.Unqlite.Contrib.Tests.Unit.csproj", "{F8C49651-0456-48EC-A67A-B0BD9DDB4A7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnqliteRepository.Tests.Integration", "UnqliteRepository.Tests.Integration\UnqliteRepository.Tests.Integration.csproj", "{E21F89AE-6296-49D0-A742-F71D509D813E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Data.Unqlite.Contrib.Tests.Integration", "System.Data.Unqlite.Contrib.Tests.Integration\System.Data.Unqlite.Contrib.Tests.Integration.csproj", "{E21F89AE-6296-49D0-A742-F71D509D813E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C2F54042-8586-413F-96B2-8150BBDAF7F7}"
 EndProject
@@ -20,6 +20,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{687815
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9F64CDB1-85C3-452C-99D8-A95973881E3D}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
