@@ -1,0 +1,3 @@
+[submodule "System.Data.Unqlite"]
+	path = System.Data.Unqlite
+	url = https://github.com/jesuswasrasta/System.Data.Unqlite
