@@ -14,8 +14,15 @@ namespace System.Data.Unqlite.Contrib
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <typeparam name="TKey">The type of the key.</typeparam>
-	public class UnqliteRepository<T, TKey> : IRepository<T, TKey> where T : IEntity<TKey>, IDisposable
+	public class UnqliteRepository<T, TKey> : IRepository<T, TKey> where T : IEntity<TKey>
 	{
+		#region Private Fields
+		private bool _disposed;
+		private IRepositoryConfiguration _configuration;
+		#endregion
+
+
+		#region Public Methods
 		/// <summary>
 		///     Sets up the repository configuration.
 		/// </summary>
@@ -23,7 +30,11 @@ namespace System.Data.Unqlite.Contrib
 		/// <exception cref="System.NotImplementedException"></exception>
 		public void Setup(IRepositoryConfiguration configuration)
 		{
-			throw new NotImplementedException();
+			if (configuration == null)
+			{
+				throw new ArgumentNullException("configuration");
+			}
+			_configuration = configuration;
 		}
 
 		/// <summary>
@@ -179,5 +190,30 @@ namespace System.Data.Unqlite.Contrib
 		{
 			throw new NotImplementedException();
 		}
+		#endregion
+
+		
+		#region Dispose
+		protected virtual void Dispose(bool disposing)
+		{
+			if (!_disposed)
+			{
+				//do dispose thing you need to
+			}
+
+			_disposed = true;
+		}
+
+		public virtual void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
+
+		~UnqliteRepository()
+		{
+			Dispose(false);
+		}
+		#endregion
 	}
 }

@@ -14,7 +14,7 @@ namespace System.Data.Unqlite.Contrib
 	/// </summary>
 	/// <typeparam name="T">The type contained in the repository.</typeparam>
 	/// <typeparam name="TKey">The type used for the entity's Id.</typeparam>
-	public interface IRepository<T, in TKey> where T : IEntity<TKey>, IDisposable
+	public interface IRepository<T, in TKey> : IDisposable where T : IEntity<TKey>
 	{
 		/// <summary>
 		///     Sets up the repository configuration.
